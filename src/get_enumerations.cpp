@@ -24,15 +24,14 @@ void get_enumerations(const int n)
 				{
 					n4 = temp4; 
 					--temp4; 
-					if (n1 + n2 + n3 + n4 == n) 
-					{
-						std::cout << "(" 
-						<< n1 << ", "
-						<< n2 << ", "
-						<< n3 << ", "
-						<< n4 << ")"
-						<< "\n"; 
-					}
+					if (n1 + n2 + n3 + n4 != n) {continue;}
+					// do something here to return the values 
+					std::cout << "(" 
+					<< n1 << ", "
+					<< n2 << ", "
+					<< n3 << ", "
+					<< n4 << ")"
+					<< "\n"; 
 				} 
 				--temp3; 
 			}
