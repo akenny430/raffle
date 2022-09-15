@@ -1,5 +1,4 @@
 #include <cmath> 
-#include <initializer_list> 
 
 #include "constants.hpp" 
 #include "factorial.hpp"
@@ -12,10 +11,7 @@ auto multinomial(
 ) -> float 
 {
     float density = factorial(n1, n2, n3, n4); 
-    // for (int x : {n1, n2, n3, n4}) 
-    // {
-    //     density *= std::pow()
-    // }
+    // TODO: maybe make constants into an array or something 
     density *= std::pow(prob::p1, n1); 
     density *= std::pow(prob::p2, n2); 
     density *= std::pow(prob::p3, n3); 
