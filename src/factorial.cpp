@@ -9,17 +9,10 @@ auto factorial(
 ) -> float 
 {
     int n = n1 + n2 + n3 + n4; 
-    // int max_n = 0; 
     float factorial_result = 1.0f; 
     for (int x : {n1, n2, n3, n4}) 
     {
-        // n += x; 
-        // max_n = x > max_n ? x : max_n; 
-        if (x == 0) 
-        {
-            factorial_result *= n--; 
-            continue; 
-        }
+        if (x == 0) {continue;} 
         while (x > 0) 
         {
             factorial_result *= n--; 
@@ -27,5 +20,4 @@ auto factorial(
         }
     }
     return factorial_result; 
-    // int total_mult = n - max_n; 
 }
