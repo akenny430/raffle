@@ -3,7 +3,7 @@
 
 void get_enumerations(const int n)
 {
-	// assert n > 0 somehow 
+	if (n <= 0) {return;} 
 	int n1, n2, n3, n4; 
 	int temp1, temp2, temp3, temp4; 
 
