@@ -2,8 +2,9 @@
 
 #include "constants.hpp" 
 #include "factorial.hpp"
+#include "multinomial.hpp" 
 
-auto multinomial(
+auto multinomial_pdf(
     int n1, 
     int n2, 
     int n3, 
