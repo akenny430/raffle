@@ -1,11 +1,11 @@
 #ifndef FACTORIAL_H 
 #define FACTORIAL_H 
 
+#include "constants.hpp"
+
 auto factorial(
-    int n1, 
-    int n2, 
-    int n3, 
-    int n4 
+    const int& n, 
+    const std::array<int, constants::n_cohort>& n_array 
 ) -> float; 
 
 #endif 

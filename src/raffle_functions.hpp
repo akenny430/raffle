@@ -1,20 +1,16 @@
 #ifndef RAFFLE_FUNCS_HPP
 #define RAFFLE_FUNCS_HPP
 
+#include "constants.hpp" 
+
 namespace raffle
 {
     auto entries(
-        int n1, 
-        int n2, 
-        int n3, 
-        int n4 
+        const std::array<int, constants::n_cohort>& n_array
     ) -> int;
 
     auto raffle_value(
-        int n1, 
-        int n2, 
-        int n3, 
-        int n4 
+        const std::array<int, constants::n_cohort>& n_array 
     ) -> int;
 }
 

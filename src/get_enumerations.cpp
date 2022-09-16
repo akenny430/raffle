@@ -1,6 +1,7 @@
+#include <array>
 #include <iostream> 
 
-// #include "constants.hpp" 
+#include "constants.hpp" 
 #include "factorial.hpp" 
 #include "multinomial.hpp" 
 
@@ -11,6 +12,7 @@ void get_enumerations(const int n)
 	int n1, n2, n3, n4; 
 	int temp1, temp2, temp3, temp4; 
 	int count = 0; 
+	std::array<int, constants::n_cohort> n_array; 
 
 	float density = 0.0f; 
 	temp1 = n; 
@@ -32,15 +34,16 @@ void get_enumerations(const int n)
 					--temp4; 
 					if (n1 + n2 + n3 + n4 != n) {continue;}
 					// do something here to return the values 
+					n_array = {n1, n2, n3, n4}; 
 					std::cout << "(" 
 					<< n1 << ", "
 					<< n2 << ", "
 					<< n3 << ", "
 					<< n4 << "): "
-					<< factorial(n1, n2, n3, n4) 
+					<< factorial(n, n_array) 
 					<< "\n"; 
 					++count; 
-					density += multinomial_pdf(n1, n2, n3, n4); 
+					density += multinomial_pdf(n, n_array);  
 				} 
 				--temp3; 
 			}

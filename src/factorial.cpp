@@ -1,21 +1,22 @@
+#include <array> 
 #include <initializer_list> 
+#include "constants.hpp"
 #include "factorial.hpp" 
 
 auto factorial(
-    int n1, 
-    int n2, 
-    int n3, 
-    int n4 
+    const int& n, 
+    const std::array<int, constants::n_cohort>& n_array 
 ) -> float 
 {
-    int n = n1 + n2 + n3 + n4; 
+    int total = n; 
     float factorial_result = 1.0f; 
-    for (int x : {n1, n2, n3, n4}) 
+    for (int x : n_array) 
+    // for () 
     {
         if (x == 0) {continue;} 
         while (x > 0) 
         {
-            factorial_result *= n--; 
+            factorial_result *= total--; 
             factorial_result /= x--; 
         }
     }

@@ -7,14 +7,11 @@
 #include "multinomial.hpp" 
 
 auto multinomial_pdf(
-    int n1, 
-    int n2, 
-    int n3, 
-    int n4
+    const int& n, 
+    const std::array<int, constants::n_cohort>& n_array  
 ) -> float 
 {
-    int n_array[constants::n_cohort] = {n1, n2, n3, n4}; 
-    float density = factorial(n1, n2, n3, n4); 
+    float density = factorial(n, n_array); 
     for (int index = 0; index < constants::n_cohort; ++index)
     {
         density *= std::pow(constants::p[index], n_array[index]); 
