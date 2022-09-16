@@ -9,12 +9,13 @@ namespace raffle
         int n4 
     ) -> int 
     {
-        return (
-            count::c1 * n1 
-            + count::c2 * n2 
-            + count::c3 * n3 
-            + count::c4 * n4 
-        );    
+        int n_entries = 0; 
+        int n_array[constants::n_cohort] = {n1, n2, n3, n4}; 
+        for (int index = 0; index < constants::n_cohort; ++index)
+        {
+            n_entries += constants::c[index] * n_array[index]; 
+        } 
+        return n_entries; 
     }
 
     auto raffle_value(
@@ -24,11 +25,12 @@ namespace raffle
         int n4 
     ) -> int 
     {
-        return (
-              count::c1 * val::v1 * n1 
-            + count::c2 * val::v2 * n2 
-            + count::c3 * val::v3 * n3 
-            + count::c4 * val::v4 * n4 
-        );    
+        float value = 0.0f; 
+        int n_array[constants::n_cohort] = {n1, n2, n3, n4}; 
+        for (int index = 0; index < constants::n_cohort; ++index)
+        {
+            value += constants::c[index] * constants::v[index] * n_array[index]; 
+        } 
+        return value; 
     }
 }

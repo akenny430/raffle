@@ -1,4 +1,6 @@
+#include <array> 
 #include <cmath> 
+#include <random> 
 
 #include "constants.hpp" 
 #include "factorial.hpp"
@@ -11,11 +13,22 @@ auto multinomial_pdf(
     int n4
 ) -> float 
 {
+    int n_array[constants::n_cohort] = {n1, n2, n3, n4}; 
     float density = factorial(n1, n2, n3, n4); 
-    // TODO: maybe make constants into an array or something 
-    density *= std::pow(prob::p1, n1); 
-    density *= std::pow(prob::p2, n2); 
-    density *= std::pow(prob::p3, n3); 
-    density *= std::pow(prob::p4, n4); 
+    for (int index = 0; index < constants::n_cohort; ++index)
+    {
+        density *= std::pow(constants::p[index], n_array[index]); 
+    }
     return density;  
 }
+
+
+// finish later 
+// auto simulate_multinomial(int n) -> std::array<int, 4>
+// {
+//     int n1, n2, n3, n4; 
+//     int remaining = n; 
+//     // int p = prob::p1; 
+
+    
+// }
