@@ -27,6 +27,6 @@ namespace raffle
         {
             value += constants::c[index] * constants::v[index] * n_array[index]; 
         } 
-        return value; 
+        return 0.5 * value; 
     }
 }
