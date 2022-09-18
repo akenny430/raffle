@@ -64,8 +64,8 @@ void compute_ev(const int n)
 
                         ex_t0 += - constants::v[index] * constants::c[index] * curr_multinomial.m_array[index] * curr_multinomial.m_density; 
                         ex_t1 += (- constants::v[index] * constants::c[index] + curr_multinomial.m_value) * curr_multinomial.m_array[index] * curr_multinomial.m_density; 
-                        p_w0 += (ratio = constants::c[index] / curr_multinomial.m_entries) * curr_multinomial.m_array[index] * curr_multinomial.m_density;
-                        p_w1 += (1 - ratio) * curr_multinomial.m_array[index] * curr_multinomial.m_density;
+                        p_w1 += (ratio = constants::c[index] / curr_multinomial.m_entries) * curr_multinomial.m_array[index] * curr_multinomial.m_density;
+                        p_w0 += (1 - ratio) * curr_multinomial.m_array[index] * curr_multinomial.m_density;
                     } // end index loop 
                 } 
                 --temp3; 
