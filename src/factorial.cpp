@@ -2,15 +2,17 @@
 #include <initializer_list> 
 #include "constants.hpp"
 #include "factorial.hpp" 
+#include "multinomial.hpp" 
 
 auto factorial(
     const int& n, 
     const std::array<int, constants::n_cohort>& n_array 
+    // const Multinomial& n 
 ) -> float 
 {
     int total = n; 
     float factorial_result = 1.0f; 
-    for (int x : n_array) 
+    for (int x : n_array)  
     // for () 
     {
         if (x == 0) {continue;} 
