@@ -8,10 +8,10 @@ auto factorial(
     const int& n, 
     const std::array<int, constants::n_cohort>& n_array 
     // const Multinomial& n 
-) -> float 
+) -> double 
 {
     int total = n; 
-    float factorial_result = 1.0f; 
+    double factorial_result = 1.0f; 
     for (int x : n_array)  
     // for () 
     {

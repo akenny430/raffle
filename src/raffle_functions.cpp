@@ -22,7 +22,7 @@ namespace raffle
         const std::array<int, constants::n_cohort>& n_array
     ) -> int 
     {
-        float value = 0.0f; 
+        double value = 0.0f; 
         for (int index = 0; index < constants::n_cohort; ++index)
         {
             value += constants::c[index] * constants::v[index] * n_array[index]; 

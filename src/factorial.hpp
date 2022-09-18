@@ -7,6 +7,6 @@ auto factorial(
     const int& n, 
     const std::array<int, constants::n_cohort>& n_array 
     // const Multinomial& n
-) -> float; 
+) -> double; 
 
 #endif 

@@ -25,9 +25,9 @@ Multinomial::Multinomial(int n1, int n2, int n3, int n4)
 auto multinomial_pdf(
     const int& n, 
     const std::array<int, constants::n_cohort>& n_array  
-) -> float 
+) -> double 
 {
-    float density = factorial(n, n_array); 
+    double density = factorial(n, n_array); 
     for (int index = 0; index < constants::n_cohort; ++index)
     {
         density *= std::pow(constants::p[index], n_array[index]); 
