@@ -109,3 +109,6 @@ $$
 = \frac{1}{2} \sum_{\mathbf{n} \in \mathcal{P}_n} f(\mathbf{n}) \sum_{k = 1}^4 v_k e_k n_k, 
 $$
 i.e. we would have to sum over all plausible combinations of cohort. 
+
+## Revisiting second problem 
+
