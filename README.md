@@ -49,7 +49,7 @@ Given $n$ and $\mathbf{p}$, we can see $\mathbf{N}$ is a multinomial random vari
 i.e. 
 $$
 \mathbf{N} \sim \mathrm{MN}(n, \mathbf{p}) 
-~~~\text{with density}~~~ 
+\text{, with density }
 f_{\mathbf{N}}(\mathbf{n}) = \frac{n!}{n_1 ! \cdot n_2 ! \cdot n_3 ! \cdot n_4 !} \, p_1^{n_1} p_2^{n_2} p_3^{n_3} p_4^{n_4}. 
 $$
 
