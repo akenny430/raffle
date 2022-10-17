@@ -7,10 +7,10 @@ The Yankees are holding a 50/50 raffle that works as follows:
 Let $n$ be the total number of patrons that partake in the raffle. 
 
 Patrons can buy entries using one of the four configurations: 
-1. 5 entries for 10 ($\mathcal{C}_1$). 
-2. 20 entries for 20 ($\mathcal{C}_2$). 
-3. 100 entries for 40 ($\mathcal{C}_3$). 
-4. 300 entries for 100 ($\mathcal{C}_4$). 
+1. 5 entries for 10 USD ($\mathcal{C}_1$). 
+2. 20 entries for 20 USD ($\mathcal{C}_2$). 
+3. 100 entries for 40 USD ($\mathcal{C}_3$). 
+4. 300 entries for 100 USD ($\mathcal{C}_4$). 
 
 We will call each of these four groups a *cohort*. 
 
@@ -29,7 +29,7 @@ Given these probabilities, we have the two following questions:
 Even though it is not stated, we make the following assumptions about the raffle: 
 - A patron can only belong to a single cohort. 
 - A patron can only buy a single set of entries. 
-i.e. if they are in $\mathcal{C}_2$, they will only contribute 20 entries and \$20 total. 
+i.e. if they are in $\mathcal{C}_2$, they will only contribute 20 entries and 20 USD total. 
 
 # Definitions and notation 
 
