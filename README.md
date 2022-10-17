@@ -43,6 +43,7 @@ So $v_1 = 2$, $v_2 = 1$, $v_3 = 2 / 5$, and $v_4 = 1 / 3$.
 
 We define the following: 
 - $\mathbf{p} = [0.15, 0.10, 0.30, 0.45]^\top$ is the vector of *probabilities* of belonging to a given cohort. 
+
 - $\mathbf{N} = [N_1, N_2, N_3, N_4]^\top$ is the number of patrons that belong to each cohort. 
 Given $n$ and $\mathbf{p}$, we can see $\mathbf{N}$ is a multinomial random variable, 
 i.e. 
@@ -51,31 +52,38 @@ $$
 ~~~\text{with density}~~~ 
 f_{\mathbf{N}}(\mathbf{n}) = \frac{n!}{n_1 ! \cdot n_2 ! \cdot n_3 ! \cdot n_4 !} \, p_1^{n_1} p_2^{n_2} p_3^{n_3} p_4^{n_4}. 
 $$
+
 - It's worth noting that for each cohort, we have 
 $\mathbb{E}[N_k] = n p_k$ and $\mathbb{V}\mathrm{ar}[N_k] = n p_k (1 - p_k)$. 
+
 - $\mathcal{P}_n$ be the set of all $\mathbf{n}$ such that $\mathbf{1}^\top\mathbf{n} = n$, i.e. the domain of $\mathbf{N}$. 
+
 - $\mathbf{E} = [E_1, E_2, E_3, E_4]^\top$ is the number of entries submitted by each cohort. 
 For each cohort we have 
 $$
 E_k = e_k \cdot N_k. 
 $$ 
+
 - $E$ is the *total number of entries*. This is just 
 $$
 E 
 = \mathbf{1}^\top\mathbf{E} 
 = \sum_{k = 1}^4 e_k N_k. 
 $$
+
 - $\mathbf{V} = [V_1, V_2, V_3, V_4]^\top$ is the total value from each cohort. 
 For each cohort we have 
 $$
 V_k = v_k \cdot E_k = v_k \cdot e_k \cdot N_k. 
 $$
+
 - $V$ is the *total value*, just 
 $$
 V = \mathbf{1}^\top\mathbf{V} 
 = \sum_{k = 1}^4 v_k E_k  
 = \sum_{k = 1}^4 v_k e_k N_k. 
 $$
+
 - $T$ is the *patron value*, just $V / 2$. 
 
 From these definitions, we see that both the entry random variables ($\mathbf{E}$ and $E$) 
