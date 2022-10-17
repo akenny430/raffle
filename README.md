@@ -47,11 +47,9 @@ We define the following:
 - $\mathbf{N} = [N_1, N_2, N_3, N_4]^\top$ is the number of patrons that belong to each cohort. 
 Given $n$ and $\mathbf{p}$, we can see $\mathbf{N}$ is a multinomial random variable, 
 i.e. 
-$$
-\mathbf{N} \sim \mathrm{MN}(n, \mathbf{p}) 
+$$\mathbf{N} \sim \mathrm{MN}(n, \mathbf{p}) 
 \text{, with density }
-f_{\mathbf{N}}(\mathbf{n}) = \frac{n!}{n_1 ! \cdot n_2 ! \cdot n_3 ! \cdot n_4 !} \, p_1^{n_1} p_2^{n_2} p_3^{n_3} p_4^{n_4}. 
-$$
+f_{\mathbf{N}}(\mathbf{n}) = \frac{n!}{n_1 ! \cdot n_2 ! \cdot n_3 ! \cdot n_4 !} \, p_1^{n_1} p_2^{n_2} p_3^{n_3} p_4^{n_4}.$$
 
 - It's worth noting that for each cohort, we have 
 $\mathbb{E}[N_k] = n p_k$ and $\mathbb{V}\mathrm{ar}[N_k] = n p_k (1 - p_k)$. 
@@ -60,29 +58,21 @@ $\mathbb{E}[N_k] = n p_k$ and $\mathbb{V}\mathrm{ar}[N_k] = n p_k (1 - p_k)$.
 
 - $\mathbf{E} = [E_1, E_2, E_3, E_4]^\top$ is the number of entries submitted by each cohort. 
 For each cohort we have 
-$$
-E_k = e_k \cdot N_k. 
-$$ 
+$$E_k = e_k \cdot N_k.$$ 
 
 - $E$ is the *total number of entries*. This is just 
-$$
-E 
+$$E 
 = \mathbf{1}^\top\mathbf{E} 
-= \sum_{k = 1}^4 e_k N_k. 
-$$
+= \sum_{k = 1}^4 e_k N_k.$$
 
 - $\mathbf{V} = [V_1, V_2, V_3, V_4]^\top$ is the total value from each cohort. 
 For each cohort we have 
-$$
-V_k = v_k \cdot E_k = v_k \cdot e_k \cdot N_k. 
-$$
+$$V_k = v_k \cdot E_k = v_k \cdot e_k \cdot N_k.$$
 
 - $V$ is the *total value*, just 
-$$
-V = \mathbf{1}^\top\mathbf{V} 
+$$V = \mathbf{1}^\top\mathbf{V} 
 = \sum_{k = 1}^4 v_k E_k  
-= \sum_{k = 1}^4 v_k e_k N_k. 
-$$
+= \sum_{k = 1}^4 v_k e_k N_k.$$
 
 - $T$ is the *patron value*, just $V / 2$. 
 
@@ -96,26 +86,20 @@ which is how we will go about solving the problem.
 
 The first problem now amounts to determining $\mathbb{E} \left[ T \right]$. 
 Expanding out $T$ gives us 
-$$
-T(\mathbf{N})
+$$T(\mathbf{N})
 = \frac{1}{2} V(\mathbf{N})
-= \frac{1}{2} \sum_{k = 1}^4 v_k e_k N_k. 
-$$
+= \frac{1}{2} \sum_{k = 1}^4 v_k e_k N_k.$$
 The naive approach would be to compute 
-$$
-\mathbb{E}[T] 
+$$\mathbb{E}[T] 
 = \mathbb{E} \left[ \frac{1}{2} \sum_{k = 1}^4 v_k e_k N_k \right]
 = \frac{1}{2} \sum_{k = 1}^4 v_k e_k \mathbb{E}[N_k] 
-= \frac{n}{2} \sum_{k = 1}^4 v_k e_k p_k, 
-$$
+= \frac{n}{2} \sum_{k = 1}^4 v_k e_k p_k,$$
 but the random variables $\mathbf{N}$ are not independent. 
 
 Instead, we should compute 
-$$
-\mathbb{E}[T] 
+$$\mathbb{E}[T] 
 = \sum_{\mathbf{n} \in \mathcal{P}_n} T(\mathbf{n}) \cdot f(\mathbf{n}), 
-= \frac{1}{2} \sum_{\mathbf{n} \in \mathcal{P}_n} f(\mathbf{n}) \sum_{k = 1}^4 v_k e_k n_k, 
-$$
+= \frac{1}{2} \sum_{\mathbf{n} \in \mathcal{P}_n} f(\mathbf{n}) \sum_{k = 1}^4 v_k e_k n_k,$$
 i.e. we would have to sum over all plausible combinations of cohort. 
 
 ## Revisiting second problem 
